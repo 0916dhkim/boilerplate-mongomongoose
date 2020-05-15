@@ -7,6 +7,7 @@
 /*  ================== */
 
 /** 1) Install & Set up mongoose */
+require("dotenv").config();
 
 // Add mongodb and mongoose to the project's package.json. Then require 
 // mongoose. Store your Mongo Atlas database URI in the private .env file 
