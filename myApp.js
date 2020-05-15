@@ -86,9 +86,15 @@ var Person = mongoose.model("Person", personSchema);
 // });
 
 var createAndSavePerson = function(done) {
-  
+  const document = new Person({
+    name: "Adam",
+    age: 3,
+    favoriteFoods: [
+      "Apple"
+    ]
+  });
+  document.save(done);
   done(null /*, data*/);
-
 };
 
 /** 4) Create many People with `Model.create()` */
