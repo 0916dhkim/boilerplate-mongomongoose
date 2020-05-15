@@ -149,9 +149,10 @@ var findPeopleByName = function(personName, done) {
 // argument `food` as search key
 
 var findOneByFood = function(food, done) {
-
-  done(null/*, data*/);
-  
+  Person.findOne(
+    { favoriteFoods: { $all: [food] } },
+    done
+  );
 };
 
 /** 7) Use `Model.findById()` */
