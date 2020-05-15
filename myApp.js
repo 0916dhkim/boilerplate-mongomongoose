@@ -93,8 +93,13 @@ var createAndSavePerson = function(done) {
       "Apple"
     ]
   });
-  document.save(done);
-  done(null /*, data*/);
+  document.save(function(err, data) {
+    if (err) {
+      done(err);
+      return;
+    }
+    done(null, data);
+  });
 };
 
 /** 4) Create many People with `Model.create()` */
