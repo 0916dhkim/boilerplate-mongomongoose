@@ -119,8 +119,6 @@ var createManyPeople = function(arrayOfPeople, done) {
       }
       done(null, data)
     });
-    done(null/*, data*/);
-    
 };
 
 /** # C[R]UD part II - READ #
