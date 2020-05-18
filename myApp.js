@@ -222,12 +222,11 @@ var findEditThenSave = function(personId, done) {
 
 var findAndUpdate = function(personName, done) {
   var ageToSet = 20;
-  Person.find({
-    name: personName
-  }).then(person => {
-    person.age = ageToSet;
-    person.save(done);
-  });
+  Person.findOneAndUpdate(
+    { name: personName },
+    { age: ageToSet },
+    { new: true }
+  ).then(done, done);
 };
 
 /** # CRU[D] part IV - DELETE #
