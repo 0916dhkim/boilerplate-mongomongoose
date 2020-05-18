@@ -226,7 +226,10 @@ var findAndUpdate = function(personName, done) {
     { name: personName },
     { age: ageToSet },
     { new: true }
-  ).then(done, done);
+  ).then(
+    person => done(null, person),
+    done
+  );
 };
 
 /** # CRU[D] part IV - DELETE #
